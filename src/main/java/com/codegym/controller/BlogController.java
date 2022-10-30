@@ -1,6 +1,7 @@
 package com.codegym.controller;
 
 import com.codegym.model.Blog;
+import com.codegym.model.BlogForm;
 import com.codegym.model.Category;
 import com.codegym.service.blog.IBlogService;
 import com.codegym.service.category.ICategoryService;
@@ -27,7 +28,7 @@ public class BlogController {
 
     @GetMapping("create-blog")
     public ModelAndView showCreateForm() {
-        ModelAndView modelAndView = new ModelAndView("/blog/create");
+        ModelAndView modelAndView = new ModelAndView("/create");
         modelAndView.addObject("blog", new Blog());
         return modelAndView;
     }
@@ -49,7 +50,7 @@ public class BlogController {
         }else {
             blogs= blogService.findAll(pageable);
         }
-        ModelAndView modelAndView = new ModelAndView("/blog/list");
+        ModelAndView modelAndView = new ModelAndView("/list");
         modelAndView.addObject("blogs", blogs);
         return modelAndView;
     }

@@ -30,8 +30,7 @@
             <td th:text="${blog.getAuthor()}"></td>
             <td>
                 <div>
-                    <img width="200" height="auto" th:each="image : ${images}" th:if="${blog.id == image.blog.id}"
-                         th:src="@{'/image/' + ${image.file}}" alt="">
+                    <img width="200" height="auto" th:src="@{'/image/' + ${blog.link}}" alt="">
                 </div>
             </td>
             <td><a th:href="@{/edit-blog/{id}(id=${blog.getId()})}">Edit</a></td>
